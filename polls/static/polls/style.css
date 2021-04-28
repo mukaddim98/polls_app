@@ -1,0 +1,22 @@
+li a {
+    color: #0C3C26;
+}
+li a:hover{
+    color: #1d915c;
+    text-decoration: none;
+}
+
+li a::selection {
+    background-color: #C9F0DD;
+}
+
+body{
+    background-color: #f8f8f8 !important;
+    font-family: Roboto, sans-serif !important;
+    color: #0C3C26 !important;
+    min-height: 600px !important;
+}
+
+h1{
+    color: #0C3C26;
+}

@@ -1,14 +1,23 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 
-<h1>{{ question.question_text }}</h1>
+<div class="container-fluid">
+    <h1>{{ question.question_text }}</h1>
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    {% endfor %}
+    </ul>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+    <a href="{% url 'polls:detail' question.id %}" class="btn btn-default btn-primary">Vote again?</a>
+    <a href="{% url 'polls:index' %}" class="btn btn-default btn-primary">Back to questions</a>
+    <br/>
+    <br/>
+    <img src="{% static 'polls/images/fundraising-heart.svg' %}"/>
+</div>
 
-<script href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-<script href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script href="https://cdn.deliver.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script href="https://cdn.deliver.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,3 +1,10 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+<div class="container-fluid">
+<h1>Questions</h1>
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
@@ -7,3 +14,8 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+<img src="{% static 'polls/images/fundraising-heart.svg' %}"/>
+</div>
+
+<script href="https://cdn.deliver.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script href="https://cdn.deliver.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
