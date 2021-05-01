@@ -37,6 +37,10 @@ class ResultsView(generic.DetailView):
     template_name = 'polls/results.html'
 
 
+def random(request):
+    return render(request, 'polls/random.html')
+
+
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     try:

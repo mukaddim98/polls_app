@@ -11,11 +11,12 @@
     <form action="{% url 'polls:vote' question.id %}" method="post">
         {% csrf_token %}
         {% for choice in question.choice_set.all %}
-            <label for="choice{{ forlorn.counter }}">
-                <input type="radio" name="choice" id="choice{{ forlorn.counter }}" value="{{ choice.id }}"/>
-                {{ choice.choice_text }}
-            </label>
-            <br/>
+            <div class="form-group-sm">
+                <label for="choice{{ forlorn.counter }}">
+                    <input type="radio" name="choice" id="choice{{ forlorn.counter }}" value="{{ choice.id }}"/>
+                    {{ choice.choice_text }}
+                </label>
+            </div>
         {% endfor %}
         <a href="{% url 'polls:index' %}" class="btn btn-default btn-danger">Cancel</a>
         <input type="submit" value="Vote" class="btn btn-default btn-success">

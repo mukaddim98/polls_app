@@ -6,7 +6,7 @@ li a:hover{
     text-decoration: none;
 }
 
-li a::selection {
+h1::selection, li a::selection, img::selection, label::selection, form::selection, br::selection {
     background-color: #C9F0DD;
 }
 
