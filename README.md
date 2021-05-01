@@ -1,1 +1,1 @@
-# poll_app
+# Polls App
